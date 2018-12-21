@@ -1,0 +1,303 @@
+/*
+Theme Name:  WP Theme
+Author: dj0
+Description: test
+Version: 0.0.1
+Tags: test
+*/
+*{
+  box-sizing:border-box;
+}
+
+$red-mid: #aa0005;
+$red-light:#c1161c;
+$red-dark:#820203;
+$main-width:1140px;
+
+.sticky-header {
+  background-color: $red-mid;
+  display: block;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+
+  &__container{
+    display:flex;
+    align-items:center;
+    height: 40px;
+    width: 100%; 
+    max-width: $main-width;
+    margin: auto;
+
+    @media only screen and (max-width:1200px) {
+      padding:0px 15px
+    }
+
+    &__logo{
+      color:white;
+      font-weight:bold;
+      text-decoration:none;
+    }
+  }
+}
+
+.slider{
+  display: flex;
+  align-items: center;
+  background-image: url("./src/images/rrr.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 400px;
+
+  @media only screen and (max-width:768px){
+    height: 230px;
+  }
+
+  @media only screen and (max-width:576px) {
+    height:180px;
+  }
+
+  .slick-slide{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .slick-dots button{
+    display: inline-block;
+    padding: 10px;
+    border:none;
+    background-color: $red-mid;
+    cursor:pointer;
+    margin-bottom: 5px;
+    color:white;
+    transition: background 0.4s ease-out;
+
+    &:hover{
+      background-color:#efefef;
+      color: black;
+    }
+  }
+
+  img{
+    width: 600px;
+
+    @media only screen and (max-width:768px) {
+      width:480px;
+    }
+
+    @media only screen and (max-width:576px) {
+      width:380px;
+    }
+
+    @media only screen and (max-width:480px) {
+      width:180px;
+    }
+  }
+
+}
+
+.content{
+  background-color:#efefef;
+  padding-bottom:30px;
+
+  &__container{
+    width: 100%;
+    margin: auto;
+  }
+
+  &__head{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:100px;
+    background-image: linear-gradient($red-light,$red-mid, $red-dark);
+    border-radius:0 0 30% 30%;
+
+    @media only screen and (max-width:1200px) {
+      padding:0px 15px;
+    }
+
+    @media only screen and (max-width:768px) {
+      height:60px;
+    }
+
+    @media only screen and (max-width:576px) {
+      height:40px;
+    }
+
+    &__title{
+      color:white;
+      font-size:30px;
+      font-weight:bold;
+
+      @media only screen and (max-width:768px) {
+        font-size:26px;
+      }
+
+      @media only screen and (max-width:576px) {
+        font-size:14px;
+      }
+    }
+  }
+
+  &__text{
+    width:80%;
+    margin:auto;
+    margin-top:30px;
+  }
+
+  &__text__item{
+    display: flex;
+    align-items: center;
+    height: 70px;
+    margin-bottom:15px;
+
+    @media only screen and (max-width:576px) {
+        height: 45px;
+    }
+
+    &__pc{
+      display: inline-block;
+      vertical-align: middle;
+      width: 70px;
+      height: inherit;
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+
+      @media only screen and (max-width:576px) {
+        width: 45px;
+      }
+    }
+
+    &__topic{
+      display: inline-block;
+      width: 100%;
+      margin-left:10px;
+      font-weight:bold;
+      text-decoration:none;
+      color:black;
+
+      @media only screen and (max-width:576px) {
+        font-size:14px;
+      }
+
+      @media only screen and (max-width:480px) {
+        font-size:12px;
+      }
+    }
+
+    .carone{
+      background-image: url("./src/images/car1.png");  
+    }
+
+    .cartwo{
+      background-image: url("./src/images/car2.png");  
+    }
+    .carthree{
+      background-image: url("./src/images/car3.png");  
+    }
+    .carfour{
+      background-image: url("./src/images/car4.png");  
+    }
+  }
+}
+
+.car-preview{
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content:space-between;
+  background-image: url("./src/images/eeee.png");   
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &__triangle{
+    -webkit-clip-path: polygon(100% 0, 0 0, 100% 100%);
+    clip-path: polygon(100% 0, 0 0, 100% 100%);
+    width: 100%;
+    height: 230px;
+   background-color: #efefef;
+
+    @supports not (clip-path:  polygon(100% 0, 0 0, 100% 100%)){
+      border-top: 150px solid #efefef;
+      border-left: 300px solid transparent;
+      background:none;
+    }
+  }
+
+  &__img{
+    display: block;
+    position: relative;
+    width: 500px;
+    height: 375px;
+    background-image: url("./src/images/s.png");
+    background-size: contain;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    -webkit-animation: move 6s  cubic-bezier(.52, -0.23, .43, 1.28)  infinite; /* Safari*/
+    animation: move 6s    cubic-bezier(.52, -0.23, .43, 1.28)  infinite;
+
+    @media only screen and (max-width:576px) {
+      height: 250px;
+      width: 400px;
+      -webkit-animation: move 6s  cubic-bezier(.52, -6.23, .43, 1.28)  infinite; /* Safari*/
+      animation: move 6s    cubic-bezier(.52, -6.23, .43, 1.28)  infinite;
+    }
+
+    @media only screen and (max-width:480px) {
+      width: 300px;
+    }
+  }
+
+  /* Safari */
+  @-webkit-keyframes move {
+    0% { left:-3000px; top:-100px;}
+    70%,100%  {left:0px; top:-100px;}
+  }
+
+  /* Standard syntax */
+  @keyframes move {
+    0% { left:-3000px; top:-100px;}
+    70%,100%  {left:0px; top:-100px;}
+  }
+}
+
+footer{
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  background-image: linear-gradient(#303030, #2a2a2a);
+  height:200px;
+
+  @media only screen and (max-width:576px) {
+    height:100px;
+  }
+
+  .link{
+    display: inline-block;
+    background: linear-gradient($red-light,$red-mid, $red-dark);
+    width: 130px;
+    padding: 15px 10px;
+    text-decoration:none;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 15px;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    transition: background 0.4s ease-out;
+
+    @media only screen and (max-width:576px) {
+      width:100px;
+      font-size:12px;
+      padding: 10px 2px;
+    }
+
+    &:hover{
+      background: linear-gradient(#1eab8f, #1abc9c);
+    }
+  }
+}
